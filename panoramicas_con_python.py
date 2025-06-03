@@ -1,4 +1,4 @@
-# AUTORES: Jacobo Sánchez-Malo Cabañero y Dani Díaz Lafuente
+# AUTORES: Jacobo Sánchez-Malo Cabañero y Dani Díez Lafuente
 
 #=======LIBRERIAS=======#
 from imutils import paths

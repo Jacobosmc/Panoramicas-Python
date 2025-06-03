@@ -5,7 +5,6 @@ import argparse
 import imutils
 import cv2
 
-<<<<<<< HEAD
 #
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--images", type=str, required=True, help="imagenes_entrada/")
@@ -18,7 +17,7 @@ imagePaths = sorted(list(paths.list_images(args["images"])))
 images = []
 # loop over the image paths, load each one, and add them to our
 # images to stitch list
-=======
+
 
 # ESTO ES PARA USARLO POR COMANDOS --> DESPUES LO CAMBIAMOS PARA QUE SEA POR JUPYTER
 # ap = argparse.ArgumentParser()
@@ -38,12 +37,10 @@ print("[INFO] loading images...") # PRINTS EN CONSOLA PARA VER QUE VA
 # Guardamos las imagenes en una lista
 imagePaths = sorted(list(paths.list_images(args[0])))
 images = []
->>>>>>> 92d20be4c987851a43ebcda0196028aed80d828f
 for imagePath in imagePaths:
 	image = cv2.imread(imagePath)
 	images.append(image)
 	
-<<<<<<< HEAD
 # initialize OpenCV's image stitcher object and then perform the image
 # stitching
 print("[INFO] stitching images...")
@@ -61,11 +58,11 @@ if status == 0:
 # otherwise the stitching failed, likely due to not enough keypoints)
 # being detected
 else:
-=======
+
 # Momento donde se unen las imágenes, pero pueden quedar mal
-print("[INFO] stitching images...")  # PRINTS EN CONSOLA PARA VER QUE VA
-stitcher = cv2.createStitcher() if imutils.is_cv3() else cv2.Stitcher_create()
-(status, stitched) = stitcher.stitch(images)
+	rint("[INFO] stitching images...")  # PRINTS EN CONSOLA PARA VER QUE VA
+	stitcher = cv2.createStitcher() if imutils.is_cv3() else cv2.Stitcher_create()
+	(status, stitched) = stitcher.stitch(images)
 
 if status == 0: # Si sale 0 es que va bien la unión de las imágenes
 	cv2.imwrite(args[1], stitched)
@@ -118,5 +115,5 @@ if status == 0: # Si sale 0 es que va bien la unión de las imágenes
 	cv2.waitKey(0)
 	
 else: # SI VA MAL
->>>>>>> 92d20be4c987851a43ebcda0196028aed80d828f
+
 	print("[INFO] image stitching failed ({})".format(status))

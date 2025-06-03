@@ -1,0 +1,8 @@
+//Página que recomiendo Jorge Igual en la propuesta de trabajo
+https://pyimagesearch.com/2018/12/17/image-stitching-with-opencv-and-python/
+
+//Video sobre el tema y con cv2
+https://youtu.be/Zs51cg4mb0k?si=fUaZa5GtdkMZpc3k
+
+//Librería de Python sobre el tema
+https://github.com/OpenStitching/stitching

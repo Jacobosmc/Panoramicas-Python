@@ -19,7 +19,7 @@ import cv2
 # · RUTA DE LAS IMÁGENES QUE QUIERES USAR[ORDENADAS EN LA CARPETA],
 # · RUTA DE SALIDA + NOMBRE DE LA IMAGEN,
 # · SI QUIERES QUE SE RECORTE O NO
-args = ["imagenes_entrada/dele/", "imagenes_salida/salida_mal.png", "0"] # ESTO QUE LO HAGA EL USUARIO EN EL MOMENTO
+args = ["imagenes_entrada/balcon/", "imagenes_salida/pano_balcon.png", "0"] # ESTO QUE LO HAGA EL USUARIO EN EL MOMENTO
 
 print("[INFO] loading images...") # PRINTS EN CONSOLA PARA VER QUE VA
 
@@ -41,9 +41,14 @@ if status == 0: # Si sale 0 es que va bien la unión de las imágenes
 	cv2.imwrite(args[1], stitched)
 	cv2.imshow("Panorámica", stitched)
 	cv2.waitKey(0)
-	while args[2] != 0 or 1:
+	while args[2] not in (0, 1):
 		args[2] = input("¿Quieres recortar la panorámica para que no tenga marcas negras raras?(SI/NO):")
-		args[2] = 0 if args[2].lower() == "si" else args[2] = 1 if args[2].lower() == "no" else args[2] = "Respuesta errónea"
+		if args[2].lower() == "si":
+			args[2] = 0 
+		elif args[2].lower() == "no":
+			args[2] = 1
+		else:
+			args[2] = "Respuesta errónea"
 		print(args[2])
 
 	if args[2] == 0: #0 si quieres recortar, 1 si no
